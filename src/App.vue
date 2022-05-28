@@ -24,17 +24,7 @@
           width="100"
         />
       </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <login-home></login-home>
     </v-app-bar>
 
     <v-main>
@@ -44,6 +34,7 @@
 </template>
 
 <script>
+import LoginHome from './components/Login/LoginHome.vue';
 import HelloWorld from './components/HelloWorld';
 
 export default {
@@ -51,6 +42,7 @@ export default {
 
   components: {
     HelloWorld,
+    LoginHome,
   },
 
   data: () => ({
