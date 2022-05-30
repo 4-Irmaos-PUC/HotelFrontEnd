@@ -9,17 +9,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-filter</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" absolute bottom temporary>
@@ -79,21 +69,144 @@
     </v-parallax>
     <div></div>
 
-    <div style="margin: 20px">
+    <div style="margin:3%">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <h4 class="subheading">Reserve!</h4>
+      
+          
+        
 
-          <v-card-text> Data check in : </v-card-text>
-          <v-card-text> Data check out: </v-card-text>
-          <v-card-text> Data check out: </v-card-text>
-        </v-col>
+      
+    
+
+    <!--data de check in e checkout Busca-->
+<div>
+<v-row>
+      <v-col
+        cols="12"
+        lg="5"
+      >
+        <v-menu
+        ref="menu"
+        v-model="menu"
+        :close-on-content-click="false"
+        :return-value.sync="date"
+        transition="scale-transition"
+        offset-y
+        min-width="auto"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-text-field
+            v-model="date"
+            label="Picker in menu"
+            prepend-icon="mdi-calendar"
+            readonly
+            v-bind="attrs"
+            v-on="on"
+          ></v-text-field>
+        </template>
+        <v-date-picker
+          v-model="date"
+          no-title
+          scrollable
+        >
+          <v-spacer></v-spacer>
+          <v-btn
+            text
+            color="primary"
+            @click="menu = false"
+          >
+            Cancel
+          </v-btn>
+          <v-btn
+            text
+            color="primary"
+            @click="$refs.menu.save(date)"
+          >
+            OK
+          </v-btn>
+        </v-date-picker>
+        
+      </v-menu>
+    
+        
+      </v-col>
+      <v-col
+        cols="12"
+        lg="5"
+      >
+        <v-menu
+        ref="menu"
+        v-model="menu"
+        :close-on-content-click="false"
+        :return-value.sync="date"
+        transition="scale-transition"
+        offset-y
+        min-width="auto"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-text-field
+            v-model="date"
+            label="Picker in menu"
+            prepend-icon="mdi-calendar"
+            readonly
+            v-bind="attrs"
+            v-on="on"
+          ></v-text-field>
+        </template>
+        <v-date-picker
+          v-model="date"
+          no-title
+          scrollable
+        >
+          <v-spacer></v-spacer>
+          <v-btn
+            text
+            color="primary"
+            @click="menu = false"
+          >
+            Cancel
+          </v-btn>
+          <v-btn
+            text
+            color="primary"
+            @click="$refs.menu.save(date)"
+          >
+            OK
+          </v-btn>
+        </v-date-picker>
+      </v-menu>
+        
+     
+      </v-col>
+
+   
+
+      <v-btn
+        
+        color="dark"
+        outlined
+        @click="active = !active"
+      >
+        Pesquisar
+      </v-btn>
+    
+    </v-row>
+
+
+
+  
+</div>
+
+<!--<div class="text-center">
+        <v-btn rounded color="black" dark> Pesquisar </v-btn>
+      </div>-->
+
+      </v-col>
       </v-row>
 
-      <div class="text-center">
-        <v-btn rounded color="black" dark> Pesquisar </v-btn>
-      </div>
-    </div>
+</div>
+    <!--fim data de check in e checkout busca-->
 
     <v-parallax
       src="https://static.wixstatic.com/media/8a3e6d_6a199168c8a045b3a68fd392dd57594b.jpg/v1/fill/w_1028,h_692,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/8a3e6d_6a199168c8a045b3a68fd392dd57594b.jpg"
@@ -149,6 +262,8 @@
         {{ new Date().getFullYear() }} — <strong>Hotel 4 Irmãos</strong>
       </v-col>
     </v-footer>
+
+    
   </v-card>
 </template>
 
@@ -162,6 +277,8 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
+    date1: "" ,
+    date2: "" 
   }),
 
   watch: {
