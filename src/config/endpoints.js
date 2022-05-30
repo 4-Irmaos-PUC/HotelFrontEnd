@@ -1,6 +1,6 @@
-const protocolHttp = isLocalHost(url) ? 'http://' : 'https://'
+// const protocolHttp = 'http://'
 
-const internal = protocolHttp + url + ":NUMERO_DA_PORTA/api/NOME_DO_ENDPOINT"
+// const internal = protocolHttp + ":NUMERO_DA_PORTA/api/NOME_DO_ENDPOINT"
 
 const endPoints = {
     absences: nomeDoEndpoint + "/absences",
