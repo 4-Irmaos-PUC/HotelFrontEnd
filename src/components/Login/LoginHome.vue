@@ -9,19 +9,16 @@
     >
       {{ notificationMessage }}
     </v-snackbar>
-    <v-container fill-height fluid v-on:keyup.enter="login">
+    <v-container class="teste" fill-height fluid v-on:keyup.enter="login">
       <v-row justify="center">
         <v-col cols="12" sm="6" md="6">
           <v-col align="center" justify="center" cols="12" sm="12" md="12">
             <v-img
-              max-width="250"
-              max-height="250"
+              max-width="200"
+              max-height="200"
               src="../../assets/logo.png"
             ></v-img>
           </v-col>
-          <v-card-title class="justify-center title-login">
-            <span class="headline">Sistema Interno</span>
-          </v-card-title>
           <v-form ref="form" v-model="valid" lazy-validation @submit="login">
             <v-container grid-list-md>
               <v-layout wrap>
@@ -53,6 +50,9 @@
           <v-col class="text-center">
             <v-btn text type="submit" right @click="login">Entrar</v-btn>
           </v-col>
+           <v-col class="text-center">
+            <v-btn text type="submit" right @click="login">Não tem usuário? Cadastre-se!</v-btn>
+          </v-col>
         </v-col>
       </v-row>
     </v-container>
@@ -68,6 +68,7 @@
 
 .input-login
   color: white !important
+
 </style>
 
 
