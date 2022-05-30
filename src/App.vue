@@ -1,33 +1,35 @@
 <template>
-  <v-app>
-    <login-home></login-home>
-    <tela-servicos></tela-servicos>
-
-    <!--<login-home></login-home>-->
-    <hotel-home> </hotel-home>
-  </v-app>
+  <div id="app">
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/check_in">CheckIn</router-link> |
+      <router-link to="/check_out">CheckOut</router-link> |
+      <router-link to="/services">Serviços</router-link> |
+      <router-link to="/profile">Meu Usuário</router-link>
+    </nav>
+    <router-view></router-view>
+  </div>
 </template>
 
-<script>
-import LoginHome from "./components/Login/LoginHome.vue";
-import TelaServicos from "./components/Servicos/TelaServicos.vue";
-//import LoginHome from './components/Login/LoginHome.vue';
-//import HelloWorld from './components/HelloWorld';
-import HotelHome from "./components/Home/HotelHome.vue";
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-export default {
-  name: "App",
+nav {
+  padding: 30px;
 
-  components: {
-    LoginHome,
-    TelaServicos,
-    //HelloWorld,
-    //LoginHome,
-    HotelHome,
-  },
+  a {
+    font-weight: bold;
+    color: #2c3e50;
 
-  data: () => ({
-    //
-  }),
-};
-</script>
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
