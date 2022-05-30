@@ -1,28 +1,46 @@
 import Vue from 'vue'
-import VueRouter from "vue-router";
 import vuetify from './plugins/vuetify'
 import App from './App.vue'
-import HelloWorld from './components/HelloWorld.vue'
+import VueRouter from 'vue-router'
 
-Vue.config.productionTip = false
-
+//Routes
+import HotelHome from './components/Home/HotelHome'
+import CheckIn from './components/CheckIn/CheckIn'
+import CheckOut from './components/CheckOut/CheckOut'
+import ServicesHome from './components/Services/ServicesHome'
+import ProfileHome from './components/Profile/ProfileHome'
 
 Vue.use(VueRouter);
+
 const router = new VueRouter({
-  router: [
+  routes: [
     {
       path: '/',
-      redirect: '/LoginHome'
+      component: HotelHome
     },
     {
-      path: '/hello_world',
-      component: HelloWorld
+      path: '/check_in',
+      component: CheckIn
+    },
+    {
+      path: '/check_out',
+      component: CheckOut
+    },
+    {
+      path: '/services',
+      component: ServicesHome
+    },
+    {
+      path: '/profile',
+      component: ProfileHome
     }
   ]
 })
 
+Vue.config.productionTip = false
+
 new Vue({
-  vuetify,
   router,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')

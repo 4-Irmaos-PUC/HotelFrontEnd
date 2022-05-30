@@ -1,22 +1,35 @@
 <template>
   <div id="app">
-  <h1>Hello App!</h1>
-  <p>
-    <!-- use the router-link component for navigation. -->
-    <!-- specify the link by passing the `to` prop. -->
-    <!-- `<router-link>` will render an `<a>` tag with the correct `href` attribute -->
-    <router-link to="/">Go to Home</router-link>
-    <router-link to="/about">Go to About</router-link>
-  </p>
-  <!-- route outlet -->
-  <!-- component matched by the route will render here -->
-  <router-view></router-view>
-</div>
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/check_in">CheckIn</router-link> |
+      <router-link to="/check_out">CheckOut</router-link> |
+      <router-link to="/services">Serviços</router-link> |
+      <router-link to="/profile">Meu Usuário</router-link>
+    </nav>
+    <router-view></router-view>
+  </div>
 </template>
 
-<script>
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-export default {
-  name: "App",
-};
-</script>
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
