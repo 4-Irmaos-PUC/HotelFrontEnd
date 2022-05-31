@@ -16,7 +16,7 @@
             <v-img
               max-width="200"
               max-height="200"
-              src="../../assets/logo.png"
+              src="../../../public/img/logo.png"
             ></v-img>
           </v-col>
           <v-form ref="form" v-model="valid" lazy-validation @submit="login">
