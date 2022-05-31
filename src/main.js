@@ -4,16 +4,21 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 
 //Routes
-import HotelHome from './components/Home/HotelHome'
 import CheckIn from './components/CheckIn/CheckIn'
 import CheckOut from './components/CheckOut/CheckOut'
-import ServicesHome from './components/Services/ServicesHome'
+import HotelHome from './components/Home/HotelHome'
+import LoginHome from './components/Login/LoginHome'
 import ProfileHome from './components/Profile/ProfileHome'
+import ServicesHome from './components/Services/ServicesHome'
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes: [
+    {
+      path: '/login',
+      component: LoginHome
+    },
     {
       path: '/',
       component: HotelHome
@@ -34,7 +39,8 @@ const router = new VueRouter({
       path: '/profile',
       component: ProfileHome
     }
-  ]
+  ],
+  mode: 'history'
 })
 
 Vue.config.productionTip = false
